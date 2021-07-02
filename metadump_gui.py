@@ -13,13 +13,20 @@ root = tk.Tk().withdraw()
 # user select input svg to convert
 path_in = filedialog.askopenfilename(title = "Select .raw file", filetypes=[('RAW Files', '.raw')])
 
+# handel canceled file selection
+if(len(path_in) == 0):
+	exit()
+
 # path for output directory
 dir_out = filedialog.askdirectory(title = "Select output directory for metadata file")
+
+# handel canceled file selection
+if(len(dir_out) == 0):
+	exit()
+
+# file name and path for out
 file_out = os.path.basename(dir_out) + "_metadata_instrument.txt"
 path_out = os.path.normpath(os.path.join(dir_out, file_out))
-print(dir_out)
-print(file_out)
-print(path_out)
 
 # run ThermoRawMetaDump on selected raw file
 os.system(rf'ThermoRawMetaDump "{path_in}" >> "{path_out}"')
