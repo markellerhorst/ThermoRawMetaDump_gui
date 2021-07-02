@@ -19,4 +19,4 @@ file_out = os.path.basename(dir_out) + "_metadata_instrument.txt"
 path_out = os.path.normpath(os.path.join(dir_out, file_out))
 
 # run ThermoRawMetaDump on selected raw file
-os.system(f'cmd /k "ThermoRawMetaDump {path_in} >> {path_out}"')
+os.system(f'"ThermoRawMetaDump {path_in} >> {path_out}"')
