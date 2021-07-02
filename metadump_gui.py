@@ -13,14 +13,14 @@ root = tk.Tk().withdraw()
 # user select input svg to convert
 path_in = filedialog.askopenfilename(title = "Select .raw file", filetypes=[('RAW Files', '.raw')])
 
-# handel canceled file selection
+# handle canceled file selection
 if(len(path_in) == 0):
 	exit()
 
 # path for output directory
 dir_out = filedialog.askdirectory(title = "Select output directory for metadata file")
 
-# handel canceled file selection
+# handle canceled directory selection
 if(len(dir_out) == 0):
 	exit()
 
